@@ -1285,14 +1285,14 @@ a:focus, a:hover {
   color: #0A2647;
 }
 .services .service-block h3 {
-  color: #333;
+  color: #ffffff;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
 }
 .services .service-block p {
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
 }
 
 /*=================================================================
@@ -1301,7 +1301,7 @@ a:focus, a:hover {
 .service-2 .service-item {
   border: 1px solid #eee;
   margin-bottom: 30px;
-  padding: 50px 20px;
+  padding: 40px 20px;
   transition: all 0.3s ease 0s;
 }
 .service-2 .service-item:hover {
@@ -1313,18 +1313,30 @@ a:focus, a:hover {
   color: #0A2647;
 }
 .service-2 .service-item i {
-  font-size: 30px;
+  font-size: 28px;
   display: inline-block;
   background: #0A2647 none repeat scroll 0 0;
   border-radius: 30px;
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
   color: #fff;
-  height: 55px;
-  line-height: 55px;
+  height: 50px;
+  line-height: 50px;
   margin-bottom: 20px;
-  width: 55px;
+  width: 50px;
   transition: all 0.3s ease 0s;
 }
+
+/* 균일한 카드 높이 */
+.service-2 .service-item,
+.services .service-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.service-2 .service-item h4,
+.services .service-block h3 { margin-top: 10px; }
+.service-2 .service-item p,
+.services .service-block p { margin-top: auto; }
 
 /*=================================================================
   Our skills
