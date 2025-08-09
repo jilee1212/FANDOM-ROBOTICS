@@ -1268,6 +1268,12 @@ a:focus, a:hover {
   font-size: 14px;
   color: #fff;
 }
+.services .service-block.deep-navy-bg {
+  background: #0A2647;
+}
+.services .service-block.deep-navy-bg i, .services .service-block.deep-navy-bg h3, .services .service-block.deep-navy-bg p {
+  color: #ffffff;
+}
 
 /*=================================================================
   Services section 2

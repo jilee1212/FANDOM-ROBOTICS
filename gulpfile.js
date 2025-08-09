@@ -22,7 +22,7 @@ var path = {
   },
   build: {
     dirBuild: "theme/",
-    dirDev: "theme/",
+    dirDev: "docs/",
   },
 };
 

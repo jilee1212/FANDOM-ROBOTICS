@@ -29,6 +29,10 @@
       font-size: 14px;
       color: $light; // #ffffff
     }
+    &.deep-navy-bg {
+      background: #0A2647;
+      i, h3, p { color: #ffffff; }
+    }
   }
 }
 
