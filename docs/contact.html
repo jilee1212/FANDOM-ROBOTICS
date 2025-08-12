@@ -174,7 +174,7 @@ End Fixed Navigation
 
  			<!-- Contact Form -->
  			<div class="contact-form col-md-6 ">
- 				<form id="contact-form" method="post" role="form">
+ 				<form id="contact-form" action="https://formspree.io/f/mzzvvvjp" method="POST" role="form">
  					<div class="form-group mb-4">
  						<input type="text" placeholder="이름" class="form-control" name="name" id="name" required>
  					</div>
@@ -193,7 +193,7 @@ End Fixed Navigation
  					<div id="cf-submit">
  						<input type="submit" id="contact-submit" class="btn btn-main" value="문의하기">
  					</div>
-
+					<div id="form-status" class="mt-3"></div>
  				</form>
  			</div>
  			<!-- ./End Contact Form -->
@@ -291,6 +291,55 @@ End Fixed Navigation
 
 <!-- Custom js -->
 <script src="js/script.js"></script>
+
+<!-- Contact Form Handler -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('contact-submit');
+    const statusDiv = document.getElementById('form-status');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = document.getElementById('contact-submit');
+            const statusDiv = document.getElementById('form-status');
+            
+            // 버튼 비활성화
+            submitBtn.disabled = true;
+            submitBtn.value = '전송 중...';
+            statusDiv.innerHTML = '<div class="alert alert-info">메시지를 전송하고 있습니다...</div>';
+            
+            fetch('https://formspree.io/f/mzzvvvjp', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusDiv.innerHTML = '<div class="alert alert-success">메시지가 성공적으로 전송되었습니다! 빠른 시일 내에 답변드리겠습니다.</div>';
+                    form.reset();
+                } else {
+                    throw new Error('전송 실패');
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = '<div class="alert alert-danger">메시지 전송에 실패했습니다. 다시 시도해주세요.</div>';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // 버튼 재활성화
+                submitBtn.disabled = false;
+                submitBtn.value = '문의하기';
+            });
+        });
+    }
+});
+</script>
 
 </body>
 
