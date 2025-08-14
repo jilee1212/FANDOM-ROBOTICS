@@ -139,6 +139,36 @@
   /* ========================================================================= */
   var scroll = new SmoothScroll('a[href*="#"]');
 
+  /* ========================================================================= */
+  /*	Language Switch Functionality
+  /* ========================================================================= */
+  // Language switch functionality
+  $('.language-switch').on('click', function(e) {
+    e.preventDefault();
+    var targetLang = $(this).data('lang');
+    var currentUrl = window.location.pathname;
+    
+    if (targetLang === 'en') {
+      // Switch to English version
+      if (currentUrl.includes('/en/')) {
+        // Already in English version
+        return;
+      }
+      var fileName = currentUrl.split('/').pop();
+      if (fileName === '') fileName = 'index.html';
+      window.location.href = 'en/' + fileName;
+    } else if (targetLang === 'ko') {
+      // Switch to Korean version
+      if (!currentUrl.includes('/en/')) {
+        // Already in Korean version
+        return;
+      }
+      var fileName = currentUrl.split('/').pop();
+      if (fileName === '') fileName = 'index.html';
+      window.location.href = '../' + fileName;
+    }
+  });
+
   // -----------------------------
   //  Count Up
   // -----------------------------
