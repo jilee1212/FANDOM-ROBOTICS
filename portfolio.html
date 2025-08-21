@@ -35,14 +35,80 @@
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- Lightbox.min css -->
-  <link rel="stylesheet" href="plugins/lightbox2/css/lightbox.min.css">
+
   <!-- animation css -->
   <link rel="stylesheet" href="plugins/animate/animate.css">
   <!-- Slick Carousel -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Custom Portfolio Styles -->
+  <style>
+    .portfolio-image-link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-image-link:hover {
+      transform: scale(1.02);
+    }
+    
+    .portfolio-image-link img {
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-image-link:hover img {
+      filter: brightness(1.1);
+    }
+    
+    .portfolio-block {
+      position: relative;
+    }
+    
+    .portfolio-block .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-block:hover .caption {
+      transform: translateY(0);
+    }
+    
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-block:hover .search-icon {
+      opacity: 1;
+    }
+  </style>
 
 </head>
 <body id="body">
@@ -158,99 +224,153 @@ End Fixed Navigation
 					<button type="button" data-filter="ai">AI</button>
 					<button type="button" data-filter="nft">NFT</button>
 					<button type="button" data-filter="defi">DeFi</button>
+					<button type="button" data-filter="website">웹사이트</button>
 				</div>
 
 				<div class="row">
 					<div class="col-12">
 						<div class="filtr-container">
+
+							<!-- 첫 번째 카드: Dex거래소간 아비트리지 차익거래 봇 -->
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, nft">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
+									<a href="images/portfolio/profit.png" data-fancybox="project-arbitrage" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/profit.png" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-1.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/profit.png" data-fancybox="project-arbitrage">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
-										<h4><a href="portfolio.html">NFT 기반 아티스트 팬덤 플랫폼</a></h4>
+										<!-- Hidden gallery images for arbitrage project -->
+										<a href="images/portfolio/AI-signal.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<a href="images/portfolio/cross-chain.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<a href="images/portfolio/past.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<h4><a href="portfolio.html">Dex거래소간 아비트리지 차익거래 봇</a></h4>
 									</div>
 								</div>
 							</div>
+
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, ai, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-2.jpg" alt="">
+									<a href="images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-trading" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-2.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-trading">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI trading project -->
+										<a href="images/portfolio/portfolio-2.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-3.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
 										<h4><a href="portfolio.html">AI 트레이딩 봇을 탑재한 DEX</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-3.jpg" alt="">
+									<a href="images/portfolio/portfolio-2.jpg" data-fancybox="project-token-economy" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-2.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-3.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-2.jpg" data-fancybox="project-token-economy">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for token economy project -->
+										<a href="images/portfolio/portfolio-3.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-4.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-5.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
 										<h4><a href="portfolio.html">글로벌 재단을 위한 토큰 이코노미 설계</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-4.jpg" alt="">
+									<a href="images/portfolio/portfolio-3.jpg" data-fancybox="project-dex" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-3.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-4.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-3.jpg" data-fancybox="project-dex">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for DEX project -->
+										<a href="images/portfolio/portfolio-4.jpg" data-fancybox="project-dex" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-5.jpg" data-fancybox="project-dex" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-6.jpg" data-fancybox="project-dex" style="display: none;"></a>
 										<h4><a href="portfolio.html">탈중앙화 거래소(DEX) 구축</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, ai">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-5.jpg" alt="">
+									<a href="images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-prediction" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-4.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-5.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-prediction">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI prediction project -->
+										<a href="images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-6.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-7.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
 										<h4><a href="portfolio.html">AI 기반 예측 분석 시스템</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain, ai">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-6.jpg" alt="">
+									<a href="images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-marketplace" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-5.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-6.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-marketplace">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI marketplace project -->
+										<a href="images/portfolio/portfolio-6.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-7.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
 										<h4><a href="portfolio.html">블록체인 기반 AI 데이터 마켓플레이스</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, nft">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-7.jpg" alt="">
+									<a href="images/portfolio/portfolio-6.jpg" data-fancybox="project-metaverse-nft" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-6.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-7.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-6.jpg" data-fancybox="project-metaverse-nft">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for metaverse NFT project -->
+										<a href="images/portfolio/portfolio-7.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-1.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-2.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
 										<h4><a href="portfolio.html">메타버스 NFT 게임 플랫폼</a></h4>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
+									<a href="images/portfolio/portfolio-7.jpg" data-fancybox="project-defi-lending" class="portfolio-image-link">
+										<img class="img-fluid" src="images/portfolio/portfolio-7.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="images/portfolio/portfolio-1.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="images/portfolio/portfolio-7.jpg" data-fancybox="project-defi-lending">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for DeFi lending project -->
+										<a href="images/portfolio/portfolio-1.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-2.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
+										<a href="images/portfolio/portfolio-3.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
 										<h4><a href="portfolio.html">DeFi 대출 플랫폼 구축</a></h4>
 									</div>
 								</div>
 							</div>
+							
+
 						</div>
 					</div>
 				</div>
@@ -392,23 +512,22 @@ End Fixed Navigation
         </div>
         <!-- End of .col-sm-3 -->
 
-        <div class="col-lg-3 col-md-6">
-          <ul>
-            <li>
-              <h3>연락처</h3>
-            </li>
-            <li>대표: 이재익</li>
-            <li>주소: 경기도 고양시 덕양구 동축로 70<br>현대프리미어캠퍼스 A동 9층</li>
-            
-          </ul>
-        </div>
+                 <div class="col-lg-3 col-md-6">
+           <ul>
+             <li>
+               <h3>연락처</h3>
+             </li>
+             <li class="ceo-info">대표: 이재익</li>
+             <li class="phone-info">전화: 010 5894 0144</li>
+           </ul>
+         </div>
         <!-- End of .col-sm-3 -->
 
       </div>
     </div> <!-- end container -->
   </div>
   <div class="footer-bottom">
-    <h5>&copy; Copyright 2024 Fandom-Robotics Inc. All Rights Reserved.</h5>
+    <h5>&copy; Copyright 2020 Fandom-Robotics Inc. All Rights Reserved.</h5>
   </div>
 </footer> <!-- end footer -->
 
@@ -425,8 +544,7 @@ End Fixed Navigation
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
 <!-- Parallax -->
 <script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-<!-- lightbox -->
-<script src="plugins/lightbox2/js/lightbox.min.js"></script>
+
 <!-- Owl Carousel -->
 <script src="plugins/slick/slick.min.js"></script>
 <!-- filter -->
@@ -437,8 +555,40 @@ End Fixed Navigation
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
 <script src="plugins/google-map/gmap.js"></script>
 
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <!-- Custom js -->
 <script src="js/script.js"></script>
+
+<!-- Initialize Fancybox -->
+<script>
+  Fancybox.bind("[data-fancybox]", {
+    // Fancybox 옵션 설정
+    loop: true,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "fullScreen",
+      "thumbs",
+      "close"
+    ],
+    animationEffect: "fade",
+    transitionEffect: "slide",
+    thumbs: {
+      autoStart: false
+    },
+    // 한국어 설정
+    l10n: {
+      CLOSE: "닫기",
+      NEXT: "다음",
+      PREV: "이전",
+      ZOOM: "확대",
+      FULL_SCREEN: "전체화면",
+      THUMBS: "썸네일",
+      SLIDE_SHOW: "슬라이드쇼"
+    }
+  });
+</script>
 
 </body>
 

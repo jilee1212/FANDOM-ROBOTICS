@@ -11,8 +11,8 @@ body {
   line-height: 1.4;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #0d1117;
-  color: #f8f9fa;
+  background-color: #ffffff;
+  color: #333333;
 }
 
 p {
@@ -83,17 +83,23 @@ a:focus, a:hover {
 }
 
 .btn-transparent {
+  background: #00A9FF;
+  border: 1px solid #00A9FF;
   color: #fff;
-  border: 1px solid #fff;
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 1px;
-  padding: 14px 35px;
+  padding: 12px 40px;
   text-transform: uppercase;
   border-radius: 40px;
+  transition: all 0.3s ease;
 }
 .btn-transparent:hover {
   color: #fff;
+  background: #0087cc;
+  border-color: #0087cc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 169, 255, 0.3);
 }
 
 .mt-10 {
@@ -255,7 +261,7 @@ a:focus, a:hover {
 .title h2 {
   font-weight: 600;
   font-size: 35px;
-  color: #f8f9fa;
+  color: #FFFFFF;
 }
 .title p {
   color: #6c757d;
@@ -876,7 +882,7 @@ a:focus, a:hover {
   About us 2 section
 ==================================================================*/
 .about-2 {
-  background: #F7F7F7;
+  background: #f5efe3;
 }
 .about-2 .checklist {
   padding-left: 30px;
@@ -885,7 +891,7 @@ a:focus, a:hover {
   position: relative;
   margin-bottom: 15px;
   font-size: 16px;
-  color: #777;
+  color: #0a2647;
   font-family: "Source Sans Pro", sans-serif;
 }
 .about-2 .checklist li:before {
@@ -943,6 +949,21 @@ a:focus, a:hover {
   ==================================================================*/
 .contact-us {
   padding: 100px 0 50px 0;
+  background-color: #1a1a2e;
+}
+
+/* 연락처 정보 섹션의 텍스트 컬러를 흰색으로 설정 */
+.contact-us h3.mb-3 {
+  color: #FFFFFF;
+}
+.contact-us p {
+  color: #FFFFFF;
+}
+.contact-us li.mb-3 {
+  color: #FFFFFF;
+}
+.contact-us li.mb-3 span {
+  color: #FFFFFF;
 }
 
 .contact-form {
@@ -1265,11 +1286,20 @@ a:focus, a:hover {
 }
 
 /*=================================================================
-  Services section
+   Services section
 ==================================================================*/
 .services {
   padding: 100px 0 130px;
+  background-color: #1a1a2e;
 }
+.services .title h2 {
+  color: #ffffff;
+}
+
+.services .title p {
+  color: #ffffff;
+}
+
 .services .service-block.color-bg {
   background: #0A2647;
   color: #fff;
@@ -1282,7 +1312,7 @@ a:focus, a:hover {
 }
 .services .service-block i {
   font-size: 75px;
-  color: #0A2647;
+  color: #ffffff;
 }
 .services .service-block h3 {
   color: #ffffff;
@@ -1298,6 +1328,9 @@ a:focus, a:hover {
 /*=================================================================
   Services section 2
 ==================================================================*/
+.service-2 {
+  background-color: #1a1a2e;
+}
 .service-2 .service-item {
   border: 1px solid #eee;
   margin-bottom: 30px;
@@ -1307,6 +1340,10 @@ a:focus, a:hover {
 .service-2 .service-item:hover {
   box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
+}
+.service-2 .service-item:hover h4,
+.service-2 .service-item:hover p {
+  color: #FFFFFF;
 }
 .service-2 .service-item:hover i {
   background: #fff;
@@ -1563,7 +1600,7 @@ a:focus, a:hover {
 .blog {
   padding-bottom: 60px;
   padding-top: 80px;
-  background: #F6F6F6;
+  background: #1a1a2e;
 }
 
 .posts {
@@ -1994,6 +2031,14 @@ a:focus, a:hover {
   color: #0A2647;
 }
 
+/* CEO 정보와 전화번호 스타일 */
+.top-footer .ceo-info {
+  color: #bdbdbd;
+}
+.top-footer .phone-info {
+  color: #bdbdbd;
+}
+
 .footer-bottom {
   text-align: center;
   background-color: #1b1b1b;
@@ -2213,6 +2258,7 @@ a:focus, a:hover {
   }
   .client-info {
     width: 100%;
+    
   }
   /* latest posts */
   .note {
@@ -2327,3 +2373,152 @@ a:focus, a:hover {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* 포트폴리오 카드 크기 통일을 위한 CSS */
+.portfolio-block a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-block a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 프로젝트 카드 크기 통일을 위한 CSS */
+.post-item .media-wrapper {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.post-item .media-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 웹사이트 제작 섹션 배경색 설정 */
+.website-details {
+  background-color: #f5efe3;
+  padding: 80px 0;
+}
+
+.website-details .title h2 {
+  color: #333333;
+}
+
+.website-details .title p {
+  color: #666666;
+}
+
+.website-details .service-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.website-details .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.website-details .feature-list li {
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.website-details .feature-list li i {
+  color: #00A9FF;
+  margin-right: 10px;
+}
+
+
+
+/* 기술 역량 섹션 배경색 설정 */
+.team-skills {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+.team-skills .title h2 {
+  color: #ffffff;
+}
+
+.team-skills .title p {
+  color: #ffffff;
+}
+
+.team-skills .team-skills-content h2 {
+  color: #ffffff;
+}
+
+.team-skills .team-skills-content p {
+  color: #ffffff;
+}
+
+.team-skills .progress-block span {
+  color: #ffffff;
+}
+
+/* Fandom Robotics의 성과 섹션 배경색 설정 */
+.counter-wrapper {
+  background: #0A2647;
+}
+
+.counter-wrapper .title h2 {
+  color: #000000;
+}
+
+.counter-wrapper .title p {
+  color: #000000;
+}
+
+/* 포트폴리오 섹션 배경색 설정 */
+.portfolio {
+  background-color: #1a1a2e;
+  padding: 100px 0;
+}
+
+.portfolio .title h2 {
+  color: #ffffff;
+}
+
+.portfolio .title p {
+  color: #ffffff;
+}
+
+.portfolio .portfolio-filter button {
+  background: #ffffff;
+  color: #0A2647;
+  border: 1px solid #ffffff;
+}
+
+.portfolio .portfolio-filter button.active {
+  background: #00A9FF;
+  color: #ffffff;
+  border-color: #00A9FF;
+}
+
+.portfolio .portfolio-filter button:hover {
+  background: #00A9FF;
+  color: #ffffff;
+  border-color: #00A9FF;
+}
+
+/* Fandom Robotics h2 (index-home.html의 about-2 섹션) */
+.about-2 .title h2 {
+	color: #1a1a2e;
+}
+
+/* 프로젝트 갤러리 h2 (about.html의 gallery 섹션) */
+.gallery .title h2 {
+	color: #1a1a2e;
+}

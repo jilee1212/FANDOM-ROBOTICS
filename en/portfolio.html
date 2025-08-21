@@ -13,12 +13,12 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Fandom Robotics | Convergence of AI and Blockchain Technology</title>
+  <title>Fandom Robotics | Portfolio - AI and Blockchain Projects</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Fandom Robotics is a technology leader that provides innovative business solutions by converging AI and blockchain technology.">
+  <meta name="description" content="Explore Fandom Robotics' portfolio of innovative AI and blockchain projects. See how we transform ideas into reality.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Fandom Robotics">
   <meta name="generator" content="Fandom Robotics Website v1.0">
@@ -41,8 +41,75 @@
   <link rel="stylesheet" href="../plugins/animate/animate.css">
   <!-- Slick Carousel -->
   <link rel="stylesheet" href="../plugins/slick/slick.css">
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Custom Portfolio Styles -->
+  <style>
+    .portfolio-image-link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-image-link:hover {
+      transform: scale(1.02);
+    }
+    
+    .portfolio-image-link img {
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-image-link:hover img {
+      filter: brightness(1.1);
+    }
+    
+    .portfolio-block {
+      position: relative;
+    }
+    
+    .portfolio-block .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-block:hover .caption {
+      transform: translateY(0);
+    }
+    
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-block:hover .search-icon {
+      opacity: 1;
+    }
+  </style>
 
 </head>
 <body id="body">
@@ -75,8 +142,8 @@ Fixed Navigation
       <!-- logo -->
       <a class="navbar-brand logo" href="index.html">
         <div class="logo-container">
-                  <img loading="lazy" class="logo-img logo-default" src="../images/fandom-logo.png" alt="Fandom Robotics Logo" />
-        <img loading="lazy" class="logo-img logo-white" src="../images/fandom-logo.png" alt="Fandom Robotics Logo" />
+          <img loading="lazy" class="logo-img logo-default" src="../images/fandom-logo.png" alt="Fandom Robotics Logo" />
+          <img loading="lazy" class="logo-img logo-white" src="../images/fandom-logo.png" alt="Fandom Robotics Logo" />
           <span class="logo-text logo-default">FANDOM ROBOTICS</span>
           <span class="logo-text logo-white">FANDOM ROBOTICS</span>
         </div>
@@ -133,8 +200,7 @@ End Fixed Navigation
 </section>
 
 <!-- Start Portfolio Section
-		=========================================== -->
-
+==================================== -->
 <section class="portfolio section-sm" id="portfolio">
 	<div class="container-fluid">
 		<div class="row justify-content-center">
@@ -151,102 +217,165 @@ End Fixed Navigation
 
 		<div class="row">
 			<div class="col-lg-12">
-
 				<div class="portfolio-filter">
 					<button type="button" data-filter="all">All</button>
 					<button type="button" data-filter="blockchain">Blockchain</button>
 					<button type="button" data-filter="ai">AI</button>
 					<button type="button" data-filter="nft">NFT</button>
 					<button type="button" data-filter="defi">DeFi</button>
+					<button type="button" data-filter="website">Website</button>
 				</div>
 
 				<div class="row">
 					<div class="col-12">
 						<div class="filtr-container">
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, nft">
+							<!-- First Card: DEX Arbitrage Trading Bot -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, nft">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-1.jpg" alt="">
+									<a href="../images/portfolio/profit.png" data-fancybox="project-arbitrage" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/profit.png" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-1.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/profit.png" data-fancybox="project-arbitrage">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
-										<h4><a href="portfolio.html">NFT-Based Artist Fandom Platform</a></h4>
+										<!-- Hidden gallery images for arbitrage project -->
+										<a href="../images/portfolio/AI-signal.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<a href="../images/portfolio/cross-chain.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<a href="../images/portfolio/past.png" data-fancybox="project-arbitrage" style="display: none;"></a>
+										<h4><a href="portfolio.html">DEX Arbitrage Trading Bot</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, ai, defi">
+
+							<!-- Second Card: AI Trading Bot DEX -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, ai, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-2.jpg" alt="">
+									<a href="../images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-trading" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-1.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-2.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-trading">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI trading project -->
+										<a href="../images/portfolio/portfolio-2.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-3.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-trading" style="display: none;"></a>
 										<h4><a href="portfolio.html">DEX with AI Trading Bot</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain">
+
+							<!-- Third Card: Token Economy Design -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, blockchain">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-3.jpg" alt="">
+									<a href="../images/portfolio/portfolio-2.jpg" data-fancybox="project-token-economy" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-2.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-3.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-2.jpg" data-fancybox="project-token-economy">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
-										<h4><a href="portfolio.html">Token Economics Design for Global Foundation</a></h4>
+										<!-- Hidden gallery images for token economy project -->
+										<a href="../images/portfolio/portfolio-3.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-4.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-5.jpg" data-fancybox="project-token-economy" style="display: none;"></a>
+										<h4><a href="portfolio.html">Token Economy Design for Global Foundation</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain, defi">
+
+							<!-- Fourth Card: DEX Development -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, blockchain, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-4.jpg" alt="">
+									<a href="../images/portfolio/portfolio-3.jpg" data-fancybox="project-dex" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-3.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-4.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-3.jpg" data-fancybox="project-dex">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for DEX project -->
+										<a href="../images/portfolio/portfolio-4.jpg" data-fancybox="project-dex" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-5.jpg" data-fancybox="project-dex" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-6.jpg" data-fancybox="project-dex" style="display: none;"></a>
 										<h4><a href="portfolio.html">Decentralized Exchange (DEX) Development</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, ai">
+
+							<!-- Fifth Card: AI Prediction System -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, ai">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-5.jpg" alt="">
+									<a href="../images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-prediction" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-4.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-5.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-4.jpg" data-fancybox="project-ai-prediction">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI prediction project -->
+										<a href="../images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-6.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-7.jpg" data-fancybox="project-ai-prediction" style="display: none;"></a>
 										<h4><a href="portfolio.html">AI-Based Predictive Analytics System</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, blockchain, ai">
+
+							<!-- Sixth Card: AI Data Marketplace -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, blockchain, ai">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-6.jpg" alt="">
+									<a href="../images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-marketplace" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-5.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-6.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-5.jpg" data-fancybox="project-ai-marketplace">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for AI marketplace project -->
+										<a href="../images/portfolio/portfolio-6.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-7.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-1.jpg" data-fancybox="project-ai-marketplace" style="display: none;"></a>
 										<h4><a href="portfolio.html">Blockchain-Based AI Data Marketplace</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, nft">
+
+							<!-- Seventh Card: Metaverse NFT Gaming -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, nft">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-7.jpg" alt="">
+									<a href="../images/portfolio/portfolio-6.jpg" data-fancybox="project-metaverse-nft" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-6.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-7.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-6.jpg" data-fancybox="project-metaverse-nft">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for metaverse NFT project -->
+										<a href="../images/portfolio/portfolio-7.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-1.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-2.jpg" data-fancybox="project-metaverse-nft" style="display: none;"></a>
 										<h4><a href="portfolio.html">Metaverse NFT Gaming Platform</a></h4>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, defi">
+
+							<!-- Eighth Card: DeFi Lending Platform -->
+							<div class="col-md-3 col-sm-6 col-xs-6 filtr-item" data-category="mix, defi">
 								<div class="portfolio-block">
-									<img class="img-fluid" src="../images/portfolio/portfolio-1.jpg" alt="">
+									<a href="../images/portfolio/portfolio-7.jpg" data-fancybox="project-defi-lending" class="portfolio-image-link">
+										<img class="img-fluid" src="../images/portfolio/portfolio-7.jpg" alt="">
+									</a>
 									<div class="caption">
-										<a class="search-icon" href="../images/portfolio/portfolio-1.jpg" data-lightbox="image-1">
+										<a class="search-icon" href="../images/portfolio/portfolio-7.jpg" data-fancybox="project-defi-lending">
 											<i class="tf-ion-ios-search-strong"></i>
 										</a>
+										<!-- Hidden gallery images for DeFi lending project -->
+										<a href="../images/portfolio/portfolio-1.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-2.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
+										<a href="../images/portfolio/portfolio-3.jpg" data-fancybox="project-defi-lending" style="display: none;"></a>
 										<h4><a href="portfolio.html">DeFi Lending Platform Development</a></h4>
 									</div>
 								</div>
@@ -258,100 +387,21 @@ End Fixed Navigation
 		</div> <!-- end row -->
 	</div> <!-- end container -->
 </section> <!-- End section -->
-<!-- Start Testimonial
-=========================================== -->
-		
-	<section class="testimonial section" id="testimonial">
-		<div class="container">
-			<div class="row">				
-				<div class="col-lg-12">
-					<!-- testimonial wrapper -->
-					<div class="testimonial-slider">
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>Working with Fandom Robotics was truly amazing. Through the convergence of AI and blockchain technology, our company's digital transformation was successfully achieved. They demonstrated exceptional technical capabilities, especially in AI trading bot development and blockchain-based security system construction. Throughout the project, they enhanced our team's understanding through continuous communication and technical support, ultimately achieving results far beyond expectations. They are a team that stands out for their expertise and creativity, and I can definitely recommend them as partners.</p>
-								<div class="rating">
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-								</div>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="../images/client-logo/clients.png" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Kim*Chul</h3>
-								<span>CEO, Tech Startup</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-				
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>When starting our blockchain project, we had many concerns, but thanks to Fandom Robotics' professional consulting, we were able to successfully launch. They provided perfect support from token economics design to exchange listing. They demonstrated amazing expertise in NFT marketplace development and smart contract security auditing, and the intuitive interface design considering user experience was also impressive. Even after project completion, they ensured the stability of our service through continuous technical support and updates. Thank you so much!</p>
-								<div class="rating">
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-								</div>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="../images/client-logo/clients.png" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Park*Young</h3>
-								<span>CTO, Blockchain Startup</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-					
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>When considering AI solution adoption, Fandom Robotics' innovative approach was impressive. They demonstrated not only technical expertise but also excellent business insights, which greatly helped our company's growth. They showed amazing results in building machine learning-based prediction models and natural language processing systems, and also demonstrated deep expertise in data analysis and insight extraction. They creatively solved all technical challenges that arose during the project, and as a result, our company's operational efficiency improved by 40%. It was truly an excellent partnership!</p>
-								<div class="rating">
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-									<i class="tf-ion-star" style="color: #FFD700;"></i>
-								</div>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="../images/client-logo/clients.png" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Lee*Ho</h3>
-								<span>CEO, AI Solution Company</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-					</div>
-				</div> 		<!-- end col lg 12 -->
-			</div>	    <!-- End row -->
-		</div>       <!-- End container -->
-	</section>    <!-- End Section -->
+<!-- End Portfolio Section -->
+
+<!-- Start Call To Action
+==================================== -->
+<section class="call-to-action section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-6 col-lg-8 text-center">
+				<h2>Ready to Start Your Project?</h2>
+				<p>Let's discuss how we can help bring your AI and blockchain ideas to life.<br>Contact us for a free consultation.</p>
+				<a href="contact.html" class="btn btn-main">Get Started</a>
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
 
 <footer id="footer" class="bg-one">
   <div class="top-footer">
@@ -374,7 +424,7 @@ End Fixed Navigation
             <li><a href="service.html">DApp and Wallet Development</a></li>
             <li><a href="service.html">Exchange Development</a></li>
             <li><a href="service.html">Trading Bot Development</a></li>
-            <li><a href="service.html">Website Creation</a></li>
+            <li><a href="service.html">Website Development</a></li>
           </ul>
         </div>
         <!-- End of .col-sm-3 -->
@@ -397,9 +447,8 @@ End Fixed Navigation
             <li>
               <h3>Contact</h3>
             </li>
-            <li>CEO: Jaeik Lee</li>
-            <li>Address: 70 Dongchug-ro, Deogyang-gu, Goyang-si, Gyeonggi-do<br>Hyundai Premier Campus Building A, 9th Floor</li>
-            
+            <li class="ceo-info">CEO: Jaeik Lee</li>
+            <li class="phone-info">Phone: 010 5894 0144</li>
           </ul>
         </div>
         <!-- End of .col-sm-3 -->
@@ -408,13 +457,14 @@ End Fixed Navigation
     </div> <!-- end container -->
   </div>
   <div class="footer-bottom">
-    <h5>&copy; Copyright 2024 Fandom-Robotics Inc. All Rights Reserved.</h5>
+    <h5>&copy; Copyright 2020 Fandom-Robotics Inc. All Rights Reserved.</h5>
   </div>
 </footer> <!-- end footer -->
 
 
 <!-- end Footer Area
-========================================== -->
+=========================================== -->
+
 <!-- 
     Essential Scripts
     =====================================-->
@@ -439,6 +489,14 @@ End Fixed Navigation
 
 <!-- Custom js -->
 <script src="../js/script.js"></script>
+
+<!-- Fancybox JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+</script>
 
 </body>
 
