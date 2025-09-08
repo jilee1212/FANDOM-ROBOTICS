@@ -621,7 +621,7 @@ a:focus, a:hover {
 }
 
 .hero-area {
-  background-image: url("../images/slider/slider-bg-1.jpg");
+  background-image: url("../images/slider/fandomrobotics_home_1.png");
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -2037,6 +2037,40 @@ a:focus, a:hover {
 }
 .top-footer .phone-info {
   color: #bdbdbd;
+}
+.top-footer .email-info {
+  color: #bdbdbd;
+  white-space: nowrap;
+}
+.top-footer .address-info {
+  color: #bdbdbd;
+  white-space: nowrap;
+}
+
+/* 첫 번째 프로젝트 이미지 스타일 */
+.post-item .media-wrapper .first-project-img {
+  object-fit: cover;
+  object-position: left;
+}
+
+/* 포트폴리오 섹션의 DEX_1.png 이미지 스타일 */
+.portfolio-block img[src="images/portfolio/DEX_1.png"] {
+  object-fit: cover;
+  object-position: left;
+}
+
+/* 영문 포트폴리오 섹션의 DEX_1.png 이미지 스타일 */
+.portfolio-block img[src="../images/portfolio/DEX_1.png"] {
+  object-fit: cover;
+  object-position: left;
+}
+
+/* 프로젝트 갤러리 이미지 정사각형 통일 스타일 */
+.company-gallery .slick-slide {
+  height: 264px; /* 현재 width인 264px와 동일하게 설정 */
+  object-fit: cover;
+  object-position: center;
+  margin: 0 10px; /* 슬라이더 간 좌우 10px 간격 */
 }
 
 .footer-bottom {
