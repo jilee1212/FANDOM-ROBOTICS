@@ -2034,17 +2034,32 @@ a:focus, a:hover {
 /* CEO 정보와 전화번호 스타일 */
 .top-footer .ceo-info {
   color: #bdbdbd;
+  font-size: 13px;
+  line-height: 30px;
 }
 .top-footer .phone-info {
   color: #bdbdbd;
+  font-size: 13px;
+  line-height: 30px;
 }
 .top-footer .email-info {
   color: #bdbdbd;
   white-space: nowrap;
+  font-size: 13px;
+  line-height: 30px;
 }
 .top-footer .address-info {
   color: #bdbdbd;
   white-space: nowrap;
+  font-size: 13px;
+  line-height: 30px;
+}
+
+/* 푸터 연락처 아이콘 스타일 */
+.top-footer .email-info i,
+.top-footer .address-info i {
+  margin-right: 8px;
+  color: #bdbdbd;
 }
 
 /* 첫 번째 프로젝트 이미지 스타일 */
