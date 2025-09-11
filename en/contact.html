@@ -7,7 +7,7 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="en">
+<html lang="en-US">
 <head>
 
   <!-- Basic Page Needs
@@ -177,22 +177,22 @@ End Fixed Navigation
 
  			<!-- Contact Form -->
  			<div class="contact-form col-md-6 ">
- 								<form id="contact-form" action="https://formspree.io/f/mzzvvvjp" method="POST" role="form">
- 					<div class="form-group mb-4">
- 						<input type="text" placeholder="Name" class="form-control" name="name" id="name" required>
- 					</div>
+				<form id="contact-form" action="https://formspree.io/f/mzzvvvjp" method="POST" role="form">
+					<div class="form-group mb-4">
+						<input type="text" placeholder="Name" class="form-control" name="name" id="name" required title="Please enter your name">
+					</div>
 
- 					<div class="form-group mb-4">
- 						<input type="email" placeholder="Email" class="form-control" name="email" id="email" required>
- 					</div>
+					<div class="form-group mb-4">
+						<input type="email" placeholder="Email" class="form-control" name="email" id="email" required title="Please enter a valid email address">
+					</div>
 
- 					<div class="form-group mb-4">
- 						<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject" required>
- 					</div>
+					<div class="form-group mb-4">
+						<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject" required title="Please enter a subject">
+					</div>
 
- 					<div class="form-group mb-4">
- 						<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message" required></textarea>
- 					</div>
+					<div class="form-group mb-4">
+						<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message" required title="Please enter your message"></textarea>
+					</div>
  					<div id="cf-submit">
  						<input type="submit" id="contact-submit" class="btn btn-main" value="Send Message">
  					</div>
@@ -300,12 +300,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusDiv = document.getElementById('form-status');
     
     if (form) {
+        // Custom validation messages in English
+        const inputs = form.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(input => {
+            input.addEventListener('invalid', function(e) {
+                e.preventDefault();
+                let message = '';
+                if (input.type === 'email') {
+                    message = 'Please enter a valid email address.';
+                } else if (input.name === 'name') {
+                    message = 'Please enter your name.';
+                } else if (input.name === 'subject') {
+                    message = 'Please enter a subject.';
+                } else if (input.name === 'message') {
+                    message = 'Please enter your message.';
+                } else {
+                    message = 'Please fill out this field.';
+                }
+                
+                // Show custom error message
+                statusDiv.innerHTML = '<div class="alert alert-warning">' + message + '</div>';
+                
+                // Focus on the invalid field
+                input.focus();
+            });
+        });
+        
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Clear previous messages
+            statusDiv.innerHTML = '';
+            
+            // Validate form
             const formData = new FormData(this);
-            const submitBtn = document.getElementById('contact-submit');
-            const statusDiv = document.getElementById('form-status');
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Check if all fields are filled
+            if (!name || !email || !subject || !message) {
+                statusDiv.innerHTML = '<div class="alert alert-warning">Please fill out all required fields.</div>';
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                statusDiv.innerHTML = '<div class="alert alert-warning">Please enter a valid email address.</div>';
+                return;
+            }
             
             // 버튼 비활성화
             submitBtn.disabled = true;

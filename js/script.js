@@ -41,6 +41,60 @@
   });
   $('.hero-slider').slickAnimation();
 
+  // Text Slider for Video Hero
+  function initTextSlider() {
+    const slides = document.querySelectorAll('.text-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to current slide and dot
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const nextIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    }
+
+    function stopSlider() {
+      clearInterval(slideInterval);
+    }
+
+    // Initialize slider
+    if (slides.length > 0) {
+      showSlide(0);
+      startSlider();
+
+      // Add click event listeners to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          stopSlider();
+          showSlide(index);
+          startSlider();
+        });
+      });
+
+    }
+  }
+
+  // Initialize text slider when DOM is ready
+  $(document).ready(function() {
+    initTextSlider();
+  });
+
   /* ========================================================================= */
   /*	Portfolio Filtering Hook
   /* =========================================================================  */

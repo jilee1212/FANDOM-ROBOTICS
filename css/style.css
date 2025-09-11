@@ -629,6 +629,170 @@ a:focus, a:hover {
   justify-content: center;
   align-items: center;
 }
+
+/* Video Hero Styles */
+.video-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.text-slider-container {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.text-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+
+.text-slide.active {
+  opacity: 1;
+}
+
+.text-slide .container {
+  width: 100%;
+}
+
+.text-slide .block {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-slide .block h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.text-slide .block p {
+  color: #fff;
+  width: 50%;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.text-slide .btn-main {
+  margin-top: 20px;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: #fff;
+}
+
+.slider-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design for Video Hero */
+@media (max-width: 768px) {
+  .text-slide .block h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .text-slide .block p {
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .slider-nav {
+    bottom: 20px;
+  }
+  
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-slide .block h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .text-slide .block p {
+    width: 95%;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .text-slide .btn-main {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
 .hero-area:before {
   content: "";
   background: rgba(0, 0, 0, 0.63);
@@ -2570,4 +2734,34 @@ a:focus, a:hover {
 /* 프로젝트 갤러리 h2 (about.html의 gallery 섹션) */
 .gallery .title h2 {
 	color: #1a1a2e;
+}
+
+/* ========================================================================= */
+/* 비디오 슬라이더 레이아웃 문제 해결 (최종)
+/* ========================================================================= */
+
+/* hero-area의 flex 속성이 video-hero 레이아웃을 망가뜨리는 것을 방지합니다. */
+.hero-area.video-hero {
+  display: block;
+}
+
+/* 슬라이드 텍스트의 P 태그 너비를 재조정하여 줄바꿈을 개선합니다. */
+.video-hero .text-slide .block p {
+    width: 100%;
+    max-width: 700px; 
+}
+
+/* ========================================================================= */
+/* AI Blockchain 이미지 크기 조정
+/* ========================================================================= */
+
+/* AI Blockchain 이미지를 360x360 크기로 자르고 중앙 정렬 */
+.ai-blockchain-img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
 }
