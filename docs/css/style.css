@@ -12,13 +12,104 @@ body {
   line-height: 1.4;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #0d1117;
-  color: #f8f9fa;
+  /* 검은색 고정 배경 */
+  background: #000000 !important;
+  color: #FFFFFF;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+
+/* 서비스 카드 큐브 애니메이션 */
+.service-cube-container {
+  position: relative;
+  overflow: visible;
+}
+
+.services .service-item {
+  position: relative;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-cubes {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.service-cube {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #00BFFF, #0080FF);
+  border-radius: 3px;
+  opacity: 0;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+}
+
+.service-cube.cube-1 {
+  left: 20%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.service-cube.cube-2 {
+  left: 50%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.service-cube.cube-3 {
+  left: 80%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* 큐브가 더 잘 보이도록 강조 */
+.service-cube-container .service-cube {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+
+@keyframes serviceCubeDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) rotate(0deg) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) rotate(180deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0px) rotate(180deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px) rotate(360deg) scale(0.5);
+  }
 }
 
 p {
   font-family: "Source Sans Pro", sans-serif;
-  color: #6c757d;
+  color: #FFFFFF;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -26,6 +117,191 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Catamaran", sans-serif;
   font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* 스크롤 따라오는 부드러운 곡선 애니메이션 */
+.animated-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-curve {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  animation: floatCurve 25s ease-in-out infinite;
+}
+
+.floating-curve::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: trailGlow 25s ease-in-out infinite;
+}
+
+.floating-curve::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 9px;
+  height: 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: trailFade 25s ease-in-out infinite;
+}
+
+.curve-1 {
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 30s;
+}
+
+.curve-2 {
+  top: 35%;
+  left: 15%;
+  animation-delay: 5s;
+  animation-duration: 28s;
+}
+
+.curve-3 {
+  top: 55%;
+  left: 25%;
+  animation-delay: 10s;
+  animation-duration: 32s;
+}
+
+.curve-4 {
+  top: 75%;
+  left: 35%;
+  animation-delay: 15s;
+  animation-duration: 26s;
+}
+
+.curve-5 {
+  top: 25%;
+  left: 65%;
+  animation-delay: 20s;
+  animation-duration: 29s;
+}
+
+.curve-6 {
+  top: 45%;
+  left: 75%;
+  animation-delay: 25s;
+  animation-duration: 31s;
+}
+
+.curve-7 {
+  top: 65%;
+  left: 85%;
+  animation-delay: 30s;
+  animation-duration: 27s;
+}
+
+.curve-8 {
+  top: 85%;
+  left: 95%;
+  animation-delay: 35s;
+  animation-duration: 33s;
+}
+
+@keyframes floatCurve {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.4;
+  }
+  15% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  30% {
+    transform: translate(120px, 20px) scale(0.9);
+  }
+  45% {
+    transform: translate(200px, -40px) scale(1.2);
+  }
+  60% {
+    transform: translate(280px, 30px) scale(0.8);
+  }
+  75% {
+    transform: translate(350px, -20px) scale(1.1);
+  }
+  90% {
+    transform: translate(400px, 10px) scale(0.9);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(450px, 0px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes trailGlow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+  75% {
+    transform: scale(3.5);
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.05;
+  }
+  30% {
+    transform: scale(2);
+  }
+  60% {
+    transform: scale(4);
+  }
+  85% {
+    opacity: 0.02;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
 }
 
 .no-padding {
@@ -257,8 +533,62 @@ a:focus, a:hover {
 }
 
 .bg-gray {
-  background: #f9f9f9;
+  background: #000000;
 }
+
+.company-mission h3 {
+  color: #FFFFFF !important;
+}
+
+.company-mission p {
+  color: #FFFFFF !important;
+}
+
+/* About 페이지 스타일 */
+.about-shot-info {
+  background: #000000;
+}
+
+.about-shot-info h2 {
+  color: #FFFFFF !important;
+}
+
+.about-shot-info p {
+  color: #FFFFFF !important;
+}
+
+.company-mission {
+  background: #000000 !important;
+}
+
+.company-mission h3 {
+  color: #FFFFFF !important;
+}
+
+.company-mission p {
+  color: #FFFFFF !important;
+}
+
+.call-to-action-2 {
+  background: #000000;
+}
+
+.call-to-action-2 h2 {
+  color: #FFFFFF !important;
+}
+
+.gallery {
+  background: #000000;
+}
+
+.gallery .title h2 {
+  color: #FFFFFF !important;
+}
+
+.gallery .title p {
+  color: #FFFFFF !important;
+}
+
 
 .header-bradcrumb {
   background: transparent;
@@ -894,12 +1224,26 @@ a:focus, a:hover {
 }
 .call-to-action h2 {
   line-height: 1.5;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
 }
 .call-to-action p {
   color: #fff;
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 30px !important;
 }
 .call-to-action .btn-main {
   margin-top: 20px;
+  font-size: 1.1rem !important;
+  padding: 15px 30px !important;
+}
+
+.call-to-action h2,
+.call-to-action p {
+  white-space: nowrap;  /* 텍스트의 자동 줄바꿈을 방지합니다. */
+  word-break: keep-all; /* 단어가 중간에서 잘리는 것을 방지합니다. (특히 한글에 중요) */
 }
 
 /*=================================================================
@@ -1038,7 +1382,7 @@ a:focus, a:hover {
   Item counter section
 ==================================================================*/
 .counter-wrapper {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: transparent;
   position: relative;
 }
 .counter-wrapper:before {
@@ -1264,30 +1608,33 @@ a:focus, a:hover {
 ==================================================================*/
 .services {
   padding: 100px 0 130px;
+  position: relative;
 }
+
+/* 물결무늬 제거됨 */
 .services .service-block.color-bg {
   background: #0A2647;
-  color: #fff;
+  color: #000;
 }
 .services .service-block.color-bg i, .services .service-block.color-bg h3, .services .service-block.color-bg p {
-  color: #fff;
+  color: #000;
 }
 .services .service-block .service-icon {
   margin-bottom: 30px;
 }
 .services .service-block i {
   font-size: 75px;
-  color: #0A2647;
+  color: #000000;
 }
 .services .service-block h3 {
-  color: #fff;
+  color: #000000;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
 }
 .services .service-block p {
   font-size: 14px;
-  color: #fff;
+  color: #000000;
 }
 .services .service-block.deep-navy-bg {
   background: #0A2647;
@@ -1302,11 +1649,181 @@ a:focus, a:hover {
 .service-2 {
   background-color: #1a1a2e;
 }
+
+/* 서비스 페이지의 services 섹션만 배경색을 #F5EFE3로 설정 */
+body:has(.services) .services {
+  background-color: #F5EFE3 !important;
+  background-image: none !important;
+}
+
+/* 서비스 페이지의 services 섹션 제목과 설명 텍스트를 검은색으로 설정 */
+body:has(.services) .services .title h2,
+body:has(.services) .services .title p {
+  color: #000000 !important;
+}
+
+/* 서비스 페이지의 color-bg 카드 배경색을 네이비블루로 설정 */
+body:has(.services) .services .service-block.color-bg {
+  background-color: #1e3a8a !important;
+}
+
+/* 서비스 페이지의 color-bg 카드 안의 텍스트를 흰색으로 설정 */
+body:has(.services) .services .service-block.color-bg h3,
+body:has(.services) .services .service-block.color-bg p,
+body:has(.services) .services .service-block.color-bg i {
+  color: #ffffff !important;
+}
+
+/* 서비스 페이지의 website-details 섹션을 카드 형태로 설정 */
+body:has(.website-details) .website-details {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 서비스 페이지의 website-details 카드 스타일 */
+body:has(.website-details) .website-details .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 서비스 페이지의 website-details 섹션의 service-item 텍스트를 검은색으로 설정 */
+body:has(.website-details) .website-details .service-item h4,
+body:has(.website-details) .website-details .service-item p,
+body:has(.website-details) .website-details .service-item i {
+  color: #000000 !important;
+}
+
+/* 서비스 페이지의 team-skills 섹션을 카드 형태로 설정 */
+body:has(.team-skills) .team-skills {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 서비스 페이지의 team-skills 카드 스타일 */
+body:has(.team-skills) .team-skills .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 서비스 페이지의 team-skills 섹션의 모든 텍스트를 검은색으로 설정 */
+body:has(.team-skills) .team-skills .title h2,
+body:has(.team-skills) .team-skills .title p,
+body:has(.team-skills) .team-skills .team-skills-content h2,
+body:has(.team-skills) .team-skills .team-skills-content p,
+body:has(.team-skills) .team-skills .progress-block span {
+  color: #000000 !important;
+}
+
+/* 홈 페이지의 counter-wrapper 섹션만 배경색을 검은색으로 설정 */
+body:has(.counter-wrapper) .counter-wrapper {
+  background-color: #000000 !important;
+}
+
+/* 홈 페이지의 testimonial 섹션만 배경색을 검은색으로 설정 */
+body:has(.testimonial) .testimonial {
+  background-color: #000000 !important;
+}
+
+/* 홈 페이지의 about-2 섹션을 카드 형태로 설정 */
+body:has(.about-2) .about-2 {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 홈 페이지의 about-2 카드 스타일 */
+body:has(.about-2) .about-2 .container {
+  background-color: #2c2c2c !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 어바웃 페이지의 about-shot-info 섹션을 카드 형태로 설정 */
+body:has(.about-shot-info) .about-shot-info {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 어바웃 페이지의 about-shot-info 카드 스타일 */
+body:has(.about-shot-info) .about-shot-info .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션을 카드 형태로 설정 */
+body:has(.company-mission) .company-mission {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 각 컬럼을 개별 카드로 설정 */
+body:has(.company-mission) .company-mission .col-md-6 {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 40px 30px !important;
+  margin-bottom: 30px !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 카드 간 간격을 넓힘 */
+body:has(.company-mission) .company-mission .row {
+  gap: 40px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 각 카드 너비 조정 */
+body:has(.company-mission) .company-mission .col-md-6 {
+  flex: 0 0 calc(50% - 20px) !important;
+  max-width: calc(50% - 20px) !important;
+  margin-bottom: 0 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 컨테이너 스타일 조정 */
+body:has(.company-mission) .company-mission .container {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 어바웃 페이지의 about-shot-info 섹션의 텍스트를 검은색으로 설정 */
+body:has(.about-shot-info) .about-shot-info h2,
+body:has(.about-shot-info) .about-shot-info p {
+  color: #000000 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 텍스트를 검은색으로 설정 */
+body:has(.company-mission) .company-mission h3,
+body:has(.company-mission) .company-mission p {
+  color: #000000 !important;
+}
 .service-2 .service-item {
   border: 1px solid #eee;
   margin-bottom: 30px;
   padding: 40px 20px;
   transition: all 0.3s ease 0s;
+  color: #000000;
+}
+.service-2 .service-item h4 {
+  color: #000000;
+}
+.service-2 .service-item p {
+  color: #000000;
 }
 .service-2 .service-item:hover {
   box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
@@ -1314,7 +1831,7 @@ a:focus, a:hover {
 }
 .service-2 .service-item:hover h4,
 .service-2 .service-item:hover p {
-  color: #FFFFFF;
+  color: #000000;
 }
 .service-2 .service-item:hover i {
   background: #fff;
@@ -1337,6 +1854,7 @@ a:focus, a:hover {
 /* Website details visuals */
 .website-details {
   background: #F5EFE3;
+  position: relative;
 }
 
 .website-details .service-item {
@@ -1415,6 +1933,13 @@ a:focus, a:hover {
 .service-2 .service-item p,
 .services .service-block p {
   margin-top: auto;
+}
+
+/* service-2 섹션의 서비스 아이템 텍스트를 하얀색으로 설정 */
+.service-2 .service-item h4,
+.service-2 .service-item p,
+.service-2 .service-item i {
+  color: #ffffff !important;
 }
 
 /*=================================================================
@@ -2423,4 +2948,58 @@ a:focus, a:hover {
 /* 프로젝트 갤러리 h2 (about.html의 gallery 섹션) */
 .gallery .title h2 {
 	color: #1a1a2e;
+}
+
+/*=================================================================
+  스크롤 애니메이션 스타일
+==================================================================*/
+
+/* 애니메이션 대상 요소들의 기본 상태 */
+.scroll-animate {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+}
+
+/* 요소가 뷰포트에 보일 때의 상태 */
+.scroll-animate.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 지연 애니메이션을 위한 추가 클래스들 */
+.scroll-animate.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-5 {
+  transition-delay: 0.5s;
+}
+
+.scroll-animate.delay-6 {
+  transition-delay: 0.6s;
+}
+
+.scroll-animate.delay-7 {
+  transition-delay: 0.7s;
+}
+
+.scroll-animate.delay-8 {
+  transition-delay: 0.8s;
+}
+
+.scroll-animate.delay-9 {
+  transition-delay: 0.9s;
 }

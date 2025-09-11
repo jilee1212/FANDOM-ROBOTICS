@@ -64,6 +64,20 @@
   End Preloader
   ==================================== -->
 
+  <!--
+  부드러운 곡선 애니메이션
+  ==================================== -->
+  <div class="animated-lines">
+    <!-- 부드럽게 떠다니는 점들 -->
+    <div class="floating-curve curve-1"></div>
+    <div class="floating-curve curve-2"></div>
+    <div class="floating-curve curve-3"></div>
+    <div class="floating-curve curve-4"></div>
+    <div class="floating-curve curve-5"></div>
+    <div class="floating-curve curve-6"></div>
+    <div class="floating-curve curve-7"></div>
+    <div class="floating-curve curve-8"></div>
+  </div>
 
 <!--
 Fixed Navigation
@@ -118,34 +132,46 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-<div class="hero-slider">
-	<div class="slider-item th-fullpage hero-area" style="background-image: url(../images/slider/slider-bg-1.jpg);">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Beyond AI and Blockchain<br>
-						Designing the Future of Business</h1>
-					<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Fandom Robotics is your business partner that solves the most complex<br> technical problems and creates new value</p>
-					<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-main"
-						href="contact.html">Request Consultation</a>
+<!-- Video Background Section -->
+<section class="hero-area video-hero">
+	<video autoplay muted loop playsinline class="hero-video">
+		<source src="../images/slider/fandomrobotics-veo.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<div class="video-overlay"></div>
+	
+	<!-- Text Slider -->
+	<div class="text-slider-container">
+		<div class="text-slider">
+			<div class="text-slide active">
+				<div class="container">
+					<div class="block">
+						<h1>Beyond AI and Blockchain<br>
+							Designing the Future of Business</h1>
+						<p>Fandom Robotics is your business partner that solves the most complex<br> technical problems and creates new value</p>
+						<a class="btn btn-main" href="contact.html">Request Consultation</a>
+					</div>
+				</div>
+			</div>
+			<div class="text-slide">
+				<div class="container">
+					<div class="block">
+						<h1>Creating Fandom with Technology<br>
+							Where Fandom Becomes Business</h1>
+						<p>Building transparent and efficient digital ecosystems<br> through the convergence of blockchain and AI</p>
+						<a class="btn btn-main" href="service.html">View Services</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="slider-item th-fullpage hero-area" style="background-image: url(../images/slider/slider-bg-2.jpg);">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1 data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Creating Fandom with Technology<br>
-						Where Fandom Becomes Business</h1>
-					<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5">Building transparent and efficient digital ecosystems<br> through the convergence of blockchain and AI</p>
-					<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main"
-						href="service.html">View Services</a>
-				</div>
-			</div>
+		
+		<!-- Slider Navigation -->
+		<div class="slider-nav">
+			<button class="slider-dot active" data-slide="0"></button>
+			<button class="slider-dot" data-slide="1"></button>
 		</div>
 	</div>
-</div>
+</section>
 
 <!--
 Start About Section
@@ -168,49 +194,49 @@ Start About Section
       <div class="col-12">
         <div class="row text-center">
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 1">
               <i class="tf-ion-ios-briefcase-outline"></i>
               <h4>Cryptocurrency Foundation Consulting</h4>
               <p>Providing one-stop consulting services from foundation establishment to whitepaper and tokenomics design.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 2">
               <i class="tf-ion-ios-cart-outline"></i>
               <h4>Token Issuance and Listing</h4>
               <p>Providing strategic listing support for successful fundraising and liquidity acquisition.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 3">
               <i class="tf-ion-ios-gear-outline"></i>
               <h4>Blockchain System Development</h4>
               <p>Developing customized blockchain solutions including proprietary mainnets, DEX, and NFT marketplaces.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 4">
               <i class="tf-ion-ios-locked-outline"></i>
               <h4>DApp and Wallet Development</h4>
               <p>Building decentralized applications and wallets with high security and excellent user experience.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 5">
               <i class="tf-ion-ios-pulse-strong"></i>
               <h4>Exchange Development</h4>
               <p>Providing integrated solutions including centralized (CEX)/decentralized (DEX) exchanges, matching engines, security, and listing/operation systems.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 6">
               <i class="tf-ion-android-globe"></i>
               <h4>Website Development</h4>
               <p>Planning, designing, and developing customized websites from corporate homepages to landing pages based on responsive UI/UX.</p>
             </div>
           </div><!-- END COL -->
           <div class="col-md-4 col-sm-6">
-            <div class="service-item">
+            <div class="service-item 7">
               <i class="tf-ion-ios-analytics-outline"></i>
               <h4>Trading Bot Development</h4>
               <p>Building real-time price collection, strategy engines, risk management, backtesting/live trading, and exchange integration (CEX/DEX).</p>
@@ -292,7 +318,7 @@ Start Counter Section
 				<div class="counters-item">
 					<i class="tf-ion-ios-people-outline"></i>
 					<div>
-						<span class="counter" data-count="50">0</span>
+							<span class="counter" data-count="135">0</span>
 					</div>
 					<h3>Satisfied Clients</h3>
 				</div>
@@ -304,7 +330,7 @@ Start Counter Section
 				<div class="counters-item">
 					<i class="tf-ion-ios-gear-outline"></i>
 					<div>
-						<span class="counter" data-count="75">0</span>
+							<span class="counter" data-count="171">0</span>
 					</div>
 					<h3>Completed Projects</h3>
 				</div>
@@ -316,7 +342,7 @@ Start Counter Section
 				<div class="counters-item">
 					<i class="tf-ion-ios-star-outline"></i>
 					<div>
-						<span class="counter" data-count="98">0</span>
+							<span class="counter" data-count="4.9">0</span>
 					</div>
 					<h3>Client Satisfaction</h3>
 
@@ -329,7 +355,7 @@ Start Counter Section
 				<div class="counters-item kill-border">
 					<i class="tf-ion-ios-bolt-outline"></i>
 					<div>
-						<span class="counter" data-count="24">0</span>
+							<span class="counter" data-count="60">0</span>
 					</div>
 					<h3>Months of Experience</h3>
 				</div>

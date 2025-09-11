@@ -11,13 +11,304 @@ body {
   line-height: 1.4;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
-  color: #333333;
+  /* 검은색 고정 배경 */
+  background: #000000 !important;
+  color: #FFFFFF;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* 서비스 카드 큐브 애니메이션 */
+.service-cube-container {
+  position: relative;
+  overflow: visible;
+}
+
+.services .service-item {
+  position: relative;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-cubes {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.service-cube {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #00BFFF, #0080FF);
+  border-radius: 4px;
+  opacity: 0;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+}
+
+.service-cube.cube-1 {
+  left: 20%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.service-cube.cube-2 {
+  left: 50%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.service-cube.cube-3 {
+  left: 80%;
+  animation: serviceCubeDrop 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* 큐브가 더 잘 보이도록 강조 */
+.service-cube-container .service-cube {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+
+@keyframes serviceCubeDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) rotate(0deg) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) rotate(180deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0px) rotate(180deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px) rotate(360deg) scale(0.5);
+  }
+}
+
+/* 스크롤 따라오는 부드러운 곡선 애니메이션 */
+.animated-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-curve {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  animation: floatCurve 25s ease-in-out infinite;
+}
+
+.floating-curve::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: trailGlow 25s ease-in-out infinite;
+}
+
+.floating-curve::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 9px;
+  height: 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: trailFade 25s ease-in-out infinite;
+}
+
+.curve-1 {
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 30s;
+}
+
+.curve-2 {
+  top: 35%;
+  left: 15%;
+  animation-delay: 5s;
+  animation-duration: 28s;
+}
+
+.curve-3 {
+  top: 55%;
+  left: 25%;
+  animation-delay: 10s;
+  animation-duration: 32s;
+}
+
+.curve-4 {
+  top: 75%;
+  left: 35%;
+  animation-delay: 15s;
+  animation-duration: 26s;
+}
+
+.curve-5 {
+  top: 25%;
+  left: 65%;
+  animation-delay: 20s;
+  animation-duration: 29s;
+}
+
+.curve-6 {
+  top: 45%;
+  left: 75%;
+  animation-delay: 25s;
+  animation-duration: 31s;
+}
+
+.curve-7 {
+  top: 65%;
+  left: 85%;
+  animation-delay: 30s;
+  animation-duration: 27s;
+}
+
+.curve-8 {
+  top: 85%;
+  left: 95%;
+  animation-delay: 35s;
+  animation-duration: 33s;
+}
+
+@keyframes floatCurve {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.4;
+  }
+  15% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  30% {
+    transform: translate(120px, 20px) scale(0.9);
+  }
+  45% {
+    transform: translate(200px, -40px) scale(1.2);
+  }
+  60% {
+    transform: translate(280px, 30px) scale(0.8);
+  }
+  75% {
+    transform: translate(350px, -20px) scale(1.1);
+  }
+  90% {
+    transform: translate(400px, 10px) scale(0.9);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(450px, 0px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes trailGlow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+  75% {
+    transform: scale(3.5);
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.05;
+  }
+  30% {
+    transform: scale(2);
+  }
+  60% {
+    transform: scale(4);
+  }
+  85% {
+    opacity: 0.02;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .floating-curve {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-curve {
+    opacity: 0.4;
+  }
 }
 
 p {
   font-family: "Source Sans Pro", sans-serif;
-  color: #6c757d;
+  color: #FFFFFF;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -25,6 +316,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Catamaran", sans-serif;
   font-weight: 600;
+  color: #FFFFFF;
 }
 
 .no-padding {
@@ -264,7 +556,7 @@ a:focus, a:hover {
   color: #FFFFFF;
 }
 .title p {
-  color: #6c757d;
+  color: #FFFFFF;
   margin: 0 auto;
 }
 .title.title-white h2 {
@@ -280,8 +572,62 @@ a:focus, a:hover {
 }
 
 .bg-gray {
-  background: #f9f9f9;
+  background: #000000;
 }
+
+.company-mission h3 {
+  color: #FFFFFF !important;
+}
+
+.company-mission p {
+  color: #FFFFFF !important;
+}
+
+/* About 페이지 스타일 */
+.about-shot-info {
+  background: #000000;
+}
+
+.about-shot-info h2 {
+  color: #FFFFFF !important;
+}
+
+.about-shot-info p {
+  color: #FFFFFF !important;
+}
+
+.company-mission {
+  background: #000000 !important;
+}
+
+.company-mission h3 {
+  color: #FFFFFF !important;
+}
+
+.company-mission p {
+  color: #FFFFFF !important;
+}
+
+.call-to-action-2 {
+  background: #000000;
+}
+
+.call-to-action-2 h2 {
+  color: #FFFFFF !important;
+}
+
+.gallery {
+  background: #000000;
+}
+
+.gallery .title h2 {
+  color: #FFFFFF !important;
+}
+
+.gallery .title p {
+  color: #FFFFFF !important;
+}
+
 
 .header-bradcrumb {
   background: transparent;
@@ -635,7 +981,7 @@ a:focus, a:hover {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #000;
+  background: transparent;
 }
 
 .hero-video {
@@ -1046,7 +1392,7 @@ a:focus, a:hover {
   About us 2 section
 ==================================================================*/
 .about-2 {
-  background: #f5efe3;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
 }
 .about-2 .checklist {
   padding-left: 30px;
@@ -1055,7 +1401,7 @@ a:focus, a:hover {
   position: relative;
   margin-bottom: 15px;
   font-size: 16px;
-  color: #0a2647;
+  color: #FFFFFF;
   font-family: "Source Sans Pro", sans-serif;
 }
 .about-2 .checklist li:before {
@@ -1075,18 +1421,31 @@ a:focus, a:hover {
 ==================================================================*/
 .call-to-action {
   padding: 100px 0;
-  background: url("../images/call-to-action/call-to-action-bg-2.jpg");
-  background-size: cover;
+  /* 배경 제거 - 전체 배경과 통일 */
   color: #fff;
 }
 .call-to-action h2 {
   line-height: 1.5;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
 }
 .call-to-action p {
   color: #fff;
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 30px !important;
 }
 .call-to-action .btn-main {
   margin-top: 20px;
+  font-size: 1.1rem !important;
+  padding: 15px 30px !important;
+}
+
+.call-to-action h2,
+.call-to-action p {
+  white-space: nowrap;  /* 텍스트의 자동 줄바꿈을 방지합니다. */
+  word-break: keep-all; /* 단어가 중간에서 잘리는 것을 방지합니다. (특히 한글에 중요) */
 }
 
 /*=================================================================
@@ -1113,7 +1472,7 @@ a:focus, a:hover {
   ==================================================================*/
 .contact-us {
   padding: 100px 0 50px 0;
-  background-color: #1a1a2e;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
 }
 
 /* 연락처 정보 섹션의 텍스트 컬러를 흰색으로 설정 */
@@ -1228,45 +1587,110 @@ a:focus, a:hover {
   Item counter section
 ==================================================================*/
 .counter-wrapper {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: transparent;
   position: relative;
+  padding: 100px 0;
 }
 .counter-wrapper:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 1;
+  display: none;
 }
 .counter-wrapper .container {
   position: relative;
   z-index: 2;
 }
+
+/* 통합 카드 스타일 */
+.counter-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.counter-card .title {
+  margin-bottom: 50px;
+}
+
+.counter-card .title h2 {
+  color: #FFFFFF !important;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.counter-card .title p {
+  color: #EAEAEA !important;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .counter-card {
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+  }
+  
+  .counter-card .title h2 {
+    font-size: 32px;
+  }
+  
+  .counter-card .title p {
+    font-size: 16px;
+  }
+  
+  .counters-item {
+    margin: 5px;
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-card {
+    padding: 30px 15px;
+    margin: 15px auto;
+  }
+  
+  .counter-card .title h2 {
+    font-size: 28px;
+  }
+  
+  .counter-card .title p {
+    font-size: 14px;
+  }
+}
 .counter-wrapper .title h2 {
-  color: #0A2647;
+  color: #FFFFFF !important;
 }
 .counter-wrapper .title p {
-  color: #6c757d;
+  color: #FFFFFF !important;
 }
 
 .counters-item {
   padding-bottom: 30px;
-  color: #0A2647;
+  color: #FFFFFF;
   position: relative;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   padding: 30px 20px;
   margin: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .counters-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 169, 255, 0.4);
+  background: rgba(0, 169, 255, 0.15);
+  border-color: rgba(0, 169, 255, 0.5);
 }
 .counters-item.kill-border:before {
   background: none;
@@ -1289,7 +1713,7 @@ a:focus, a:hover {
   font-size: 35px;
   font-weight: 700;
   line-height: 50px;
-  color: #00A9FF;
+  color: #FFFFFF;
 }
 .counters-item i {
   font-size: 40px;
@@ -1300,7 +1724,7 @@ a:focus, a:hover {
 .counters-item h3 {
   font-size: 18px;
   margin: 0;
-  color: #0A2647;
+  color: #FFFFFF;
   font-weight: 600;
 }
 
@@ -1450,12 +1874,15 @@ a:focus, a:hover {
 }
 
 /*=================================================================
-   Services section
+  Services section
 ==================================================================*/
 .services {
   padding: 100px 0 130px;
-  background-color: #1a1a2e;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
+  position: relative;
 }
+
+/* 물결무늬 제거됨 */
 .services .title h2 {
   color: #ffffff;
 }
@@ -1466,40 +1893,263 @@ a:focus, a:hover {
 
 .services .service-block.color-bg {
   background: #0A2647;
-  color: #fff;
+  color: #000;
 }
 .services .service-block.color-bg i, .services .service-block.color-bg h3, .services .service-block.color-bg p {
-  color: #fff;
+  color: #000;
 }
 .services .service-block .service-icon {
   margin-bottom: 30px;
 }
 .services .service-block i {
   font-size: 75px;
-  color: #ffffff;
+  color: #000000;
 }
 .services .service-block h3 {
-  color: #ffffff;
+  color: #000000;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
 }
 .services .service-block p {
   font-size: 14px;
-  color: #ffffff;
+  color: #000000;
 }
 
 /*=================================================================
   Services section 2
 ==================================================================*/
 .service-2 {
-  background-color: #1a1a2e;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
+}
+
+/* 서비스 페이지의 services 섹션만 배경색을 #F5EFE3로 설정 */
+body:has(.services) .services {
+  background-color: #F5EFE3 !important;
+  background-image: none !important;
+}
+
+/* 서비스 페이지의 services 섹션 제목과 설명 텍스트를 검은색으로 설정 */
+body:has(.services) .services .title h2,
+body:has(.services) .services .title p {
+  color: #000000 !important;
+}
+
+/* 서비스 페이지의 color-bg 카드 배경색을 네이비블루로 설정 */
+body:has(.services) .services .service-block.color-bg {
+  background-color: #1e3a8a !important;
+}
+
+/* 서비스 페이지의 color-bg 카드 안의 텍스트를 흰색으로 설정 */
+body:has(.services) .services .service-block.color-bg h3,
+body:has(.services) .services .service-block.color-bg p,
+body:has(.services) .services .service-block.color-bg i {
+  color: #ffffff !important;
+}
+
+/* 서비스 페이지의 website-details 섹션을 카드 형태로 설정 */
+body:has(.website-details) .website-details {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 서비스 페이지의 website-details 카드 스타일 */
+body:has(.website-details) .website-details .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 서비스 페이지의 website-details 섹션의 service-item 텍스트를 검은색으로 설정 */
+body:has(.website-details) .website-details .service-item h4,
+body:has(.website-details) .website-details .service-item p,
+body:has(.website-details) .website-details .service-item i {
+  color: #000000 !important;
+}
+
+/* 서비스 페이지의 team-skills 섹션을 카드 형태로 설정 */
+body:has(.team-skills) .team-skills {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 서비스 페이지의 team-skills 카드 스타일 */
+body:has(.team-skills) .team-skills .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 서비스 페이지의 team-skills 섹션의 모든 텍스트를 검은색으로 설정 */
+body:has(.team-skills) .team-skills .title h2,
+body:has(.team-skills) .team-skills .title p,
+body:has(.team-skills) .team-skills .team-skills-content h2,
+body:has(.team-skills) .team-skills .team-skills-content p,
+body:has(.team-skills) .team-skills .progress-block span {
+  color: #000000 !important;
+}
+
+/* 홈 페이지의 counter-wrapper 섹션만 배경색을 검은색으로 설정 */
+body:has(.counter-wrapper) .counter-wrapper {
+  background-color: #000000 !important;
+}
+
+/* 홈 페이지의 testimonial 섹션만 배경색을 검은색으로 설정 */
+body:has(.testimonial) .testimonial {
+  background-color: #000000 !important;
+}
+
+/* 홈 페이지의 about-2 섹션을 카드 형태로 설정 */
+body:has(.about-2) .about-2 {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 홈 페이지의 about-2 카드 스타일 */
+body:has(.about-2) .about-2 .container {
+  background-color: #2c2c2c !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* Testimonial Slider Spacing */
+#testimonialSlider .testimonial-card {
+  margin: 0 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-slider-container {
+  position: relative;
+}
+
+/* Ensure all cards have equal height */
+#testimonialSlider .slick-slide {
+  height: auto;
+}
+
+#testimonialSlider .slick-slide > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#testimonialSlider .testimonial-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#testimonialSlider .testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#testimonialSlider .testimonial-excerpt {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-slider-container {
+    padding: 0 20px;
+  }
+  
+  .testimonial-nav button {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+
+/* 어바웃 페이지의 about-shot-info 섹션을 카드 형태로 설정 */
+body:has(.about-shot-info) .about-shot-info {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 어바웃 페이지의 about-shot-info 카드 스타일 */
+body:has(.about-shot-info) .about-shot-info .container {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 60px 40px !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션을 카드 형태로 설정 */
+body:has(.company-mission) .company-mission {
+  background-color: transparent !important;
+  padding: 50px 0 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 각 컬럼을 개별 카드로 설정 */
+body:has(.company-mission) .company-mission .col-md-6 {
+  background-color: #F5EFE3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 40px 30px !important;
+  margin-bottom: 30px !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 카드 간 간격을 넓힘 */
+body:has(.company-mission) .company-mission .row {
+  gap: 40px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 각 카드 너비 조정 */
+body:has(.company-mission) .company-mission .col-md-6 {
+  flex: 0 0 calc(50% - 20px) !important;
+  max-width: calc(50% - 20px) !important;
+  margin-bottom: 0 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 컨테이너 스타일 조정 */
+body:has(.company-mission) .company-mission .container {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 어바웃 페이지의 about-shot-info 섹션의 텍스트를 검은색으로 설정 */
+body:has(.about-shot-info) .about-shot-info h2,
+body:has(.about-shot-info) .about-shot-info p {
+  color: #000000 !important;
+}
+
+/* 어바웃 페이지의 company-mission 섹션의 텍스트를 검은색으로 설정 */
+body:has(.company-mission) .company-mission h3,
+body:has(.company-mission) .company-mission p {
+  color: #000000 !important;
 }
 .service-2 .service-item {
   border: 1px solid #eee;
   margin-bottom: 30px;
   padding: 40px 20px;
   transition: all 0.3s ease 0s;
+  color: #000000;
+}
+.service-2 .service-item h4 {
+  color: #000000;
+}
+.service-2 .service-item p {
+  color: #000000;
 }
 .service-2 .service-item:hover {
   box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
@@ -1507,7 +2157,7 @@ a:focus, a:hover {
 }
 .service-2 .service-item:hover h4,
 .service-2 .service-item:hover p {
-  color: #FFFFFF;
+  color: #000000;
 }
 .service-2 .service-item:hover i {
   background: #fff;
@@ -1538,6 +2188,13 @@ a:focus, a:hover {
 .services .service-block h3 { margin-top: 10px; }
 .service-2 .service-item p,
 .services .service-block p { margin-top: auto; }
+
+/* service-2 섹션의 서비스 아이템 텍스트를 하얀색으로 설정 */
+.service-2 .service-item h4,
+.service-2 .service-item p,
+.service-2 .service-item i {
+  color: #ffffff !important;
+}
 
 /*=================================================================
   Our skills
@@ -1701,11 +2358,252 @@ a:focus, a:hover {
   Testimonial section
 ==================================================================*/
 .testimonial {
-  padding-top: 100px;
-  background: #0A2647;
+  padding: 100px 0;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
   position: relative;
-  padding-bottom: 0px;
-  margin-bottom: 80px;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 169, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 169, 255, 0.3);
+}
+
+.testimonial-icon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonial-icon i {
+  font-size: 50px;
+  color: #00A9FF;
+}
+
+.testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rating i {
+  color: #FFD700;
+  font-size: 20px;
+  margin: 0 2px;
+}
+
+.testimonial-excerpt {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: center;
+  flex: 1;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.client-avatar {
+  margin-right: 15px;
+}
+
+.client-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-details h4 {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.client-details span {
+  color: #EAEAEA;
+  font-size: 14px;
+}
+
+.read-more-btn {
+  background: linear-gradient(45deg, #00A9FF, #0087cc);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: center;
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(45deg, #0087cc, #00A9FF);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 169, 255, 0.4);
+}
+
+/* Testimonial Modal */
+.testimonial-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #000000;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #00A9FF;
+}
+
+.modal-body {
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.modal-body .testimonial-icon i {
+  font-size: 60px;
+  color: #00A9FF;
+  margin-bottom: 30px;
+}
+
+.modal-body .rating {
+  margin-bottom: 30px;
+}
+
+.modal-body .rating i {
+  font-size: 25px;
+  margin: 0 3px;
+}
+
+.full-testimonial {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.modal-body .client-info {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.modal-body .client-avatar img {
+  width: 80px;
+  height: 80px;
+}
+
+.modal-body .client-details h4 {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-body .client-details span {
+  color: #666666;
+  font-size: 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  
+  .modal-body {
+    padding: 40px 30px;
+  }
+  
+  .full-testimonial {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 25px 15px;
+  }
+  
+  .modal-body {
+    padding: 30px 20px;
+  }
+  
+  .full-testimonial {
+    font-size: 15px;
+  }
 }
 .testimonial:before {
   content: "";
@@ -1715,7 +2613,7 @@ a:focus, a:hover {
   right: 0%;
   bottom: 0;
   height: 145px;
-  background-color: rgb(255, 255, 255);
+  background-color: #000000;
 }
 .testimonial .item i {
   font-size: 60px;
@@ -1764,7 +2662,7 @@ a:focus, a:hover {
 .blog {
   padding-bottom: 60px;
   padding-top: 80px;
-  background: #1a1a2e;
+  /* 배경색 제거 - 고정 그라디언트 사용 */
 }
 
 .posts {
@@ -2159,7 +3057,7 @@ a:focus, a:hover {
   Footer section
 ==================================================================*/
 .top-footer {
-  background-color: #222222;
+  background-color: #000000;
   border-top: 1px solid #404040;
   padding: 100px 0 80px;
 }
@@ -2192,7 +3090,34 @@ a:focus, a:hover {
   display: block;
 }
 .top-footer li a:hover {
-  color: #0A2647;
+  color: #00A9FF;
+}
+
+/* Footer Animation Styles */
+.footer-section {
+  transition: all 0.6s ease-out;
+}
+
+.footer-section.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.footer-section.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section.scroll-animate.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.footer-section.scroll-animate.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.footer-section.scroll-animate.delay-3 {
+  transition-delay: 0.3s;
 }
 
 /* CEO 정보와 전화번호 스타일 */
@@ -2619,6 +3544,7 @@ a:focus, a:hover {
 .website-details {
   background-color: #f5efe3;
   padding: 80px 0;
+  position: relative;
 }
 
 .website-details .title h2 {
@@ -2683,7 +3609,7 @@ a:focus, a:hover {
 
 /* Fandom Robotics의 성과 섹션 배경색 설정 */
 .counter-wrapper {
-  background: #0A2647;
+  background: transparent;
 }
 
 .counter-wrapper .title h2 {
@@ -2728,7 +3654,7 @@ a:focus, a:hover {
 
 /* Fandom Robotics h2 (index-home.html의 about-2 섹션) */
 .about-2 .title h2 {
-	color: #1a1a2e;
+	color: #FFFFFF !important;
 }
 
 /* 프로젝트 갤러리 h2 (about.html의 gallery 섹션) */
@@ -2764,4 +3690,58 @@ a:focus, a:hover {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/*=================================================================
+  스크롤 애니메이션 스타일
+==================================================================*/
+
+/* 애니메이션 대상 요소들의 기본 상태 */
+.scroll-animate {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+}
+
+/* 요소가 뷰포트에 보일 때의 상태 */
+.scroll-animate.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 지연 애니메이션을 위한 추가 클래스들 */
+.scroll-animate.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-5 {
+  transition-delay: 0.5s;
+}
+
+.scroll-animate.delay-6 {
+  transition-delay: 0.6s;
+}
+
+.scroll-animate.delay-7 {
+  transition-delay: 0.7s;
+}
+
+.scroll-animate.delay-8 {
+  transition-delay: 0.8s;
+}
+
+.scroll-animate.delay-9 {
+  transition-delay: 0.9s;
 }
