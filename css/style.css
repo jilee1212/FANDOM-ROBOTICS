@@ -727,6 +727,39 @@ body {
     border-radius: 4px !important;
   }
 
+  /* 모바일에서 고객후기 섹션 표시 강화 */
+  .testimonial {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    padding: 60px 0 !important;
+  }
+
+  .testimonial-slider-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 0 15px !important;
+  }
+
+  #testimonialSlider {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .testimonial-card {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 30px !important;
+    padding: 25px 20px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
   /* Target specific about page elements that might cause overflow */
   .company-mission video {
     width: 100% !important;
