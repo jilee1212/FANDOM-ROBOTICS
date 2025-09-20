@@ -10,6 +10,15 @@
 <html lang="en">
 <head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
@@ -22,12 +31,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Fandom Robotics">
   <meta name="generator" content="Fandom Robotics Website v1.0">
-  
+  <meta name="keywords" content="AI, 블록체인, 인공지능, 트레이딩봇, 비즈니스솔루션, 기술컨설팅">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fandomrobotics.com/">
+  <meta property="og:title" content="Fandom Robotics | AI와 블록체인 기술의 융합">
+  <meta property="og:description" content="Fandom Robotics는 AI와 블록체인 기술을 융합하여 혁신적인 비즈니스 솔루션을 제공하는 기술 선도 기업입니다.">
+  <meta property="og:image" content="https://fandomrobotics.com/images/fandom-logo.png">
+  <meta property="og:site_name" content="Fandom Robotics">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://fandomrobotics.com/">
+  <meta name="twitter:title" content="Fandom Robotics | AI와 블록체인 기술의 융합">
+  <meta name="twitter:description" content="Fandom Robotics는 AI와 블록체인 기술을 융합하여 혁신적인 비즈니스 솔루션을 제공하는 기술 선도 기업입니다.">
+  <meta name="twitter:image" content="https://fandomrobotics.com/images/fandom-logo.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fandomrobotics.com/">
+
+  <!-- Language alternatives -->
+  <link rel="alternate" hreflang="ko" href="https://fandomrobotics.com/">
+  <link rel="alternate" hreflang="en" href="https://fandomrobotics.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://fandomrobotics.com/">
+
   <!-- theme meta -->
   <meta name="theme-name" content="fandom-robotics" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/fandom-logo.png" />
+
+  <!-- Performance optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//maps.googleapis.com">
+
+  <!-- Resource hints for critical resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="plugins/bootstrap/bootstrap.min.css" as="style">
+  <link rel="preload" href="js/script.js" as="script">
 
   <!-- CSS
   ================================================== -->
@@ -43,6 +87,61 @@
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fandom Robotics",
+    "url": "https://fandomrobotics.com",
+    "logo": "https://fandomrobotics.com/images/fandom-logo.png",
+    "description": "Fandom Robotics는 AI와 블록체인 기술을 융합하여 혁신적인 비즈니스 솔루션을 제공하는 기술 선도 기업입니다.",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://github.com/jilee1212/FANDOM-ROBOTICS"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "url": "https://fandomrobotics.com/contact.html"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KR"
+    },
+    "serviceArea": {
+      "@type": "Place",
+      "name": "Global"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Development",
+          "description": "인공지능 솔루션 개발 및 컨설팅"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Blockchain Development",
+          "description": "블록체인 기술 개발 및 구현"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Trading Bot Development",
+          "description": "자동화 트레이딩 봇 개발"
+        }
+      }
+    ]
+  }
+  </script>
 
 </head>
 <body id="body">

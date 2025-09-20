@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Block access to alternative landing pages to prevent duplicate content issues
+Disallow: /index-home.html
+Disallow: /index-text.html
+Disallow: /onepage-slider.html
+Disallow: /onepage-text.html
+Disallow: /single-post.html
+
+# Block admin and development files
+Disallow: /gulpfile.js
+Disallow: /package.json
+Disallow: /.editorconfig
+Disallow: /.jshintrc
+Disallow: /.gitignore
+
+# Allow important directories
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /plugins/
+Allow: /en/
+
+# Sitemap location
+Sitemap: https://fandomrobotics.com/sitemap.xml
