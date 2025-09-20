@@ -727,7 +727,7 @@ body {
     border-radius: 4px !important;
   }
 
-  /* 모바일에서 고객후기 섹션 표시 강화 */
+  /* 모바일에서 고객후기 섹션 Slick 슬라이더 비활성화 */
   .testimonial {
     display: block !important;
     visibility: visible !important;
@@ -743,21 +743,47 @@ body {
     padding: 0 15px !important;
   }
 
-  #testimonialSlider {
+  /* Slick 슬라이더 컨테이너 리셋 */
+  #testimonialSlider.slick-initialized {
     display: block !important;
-    visibility: visible !important;
+  }
+
+  #testimonialSlider .slick-list {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #testimonialSlider .slick-track {
+    display: block !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
     opacity: 1 !important;
   }
 
-  .testimonial-card {
+  /* 모든 testimonial 카드 강제 표시 */
+  #testimonialSlider .testimonial-card {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
     margin-bottom: 30px !important;
     padding: 25px 20px !important;
     background: rgba(255, 255, 255, 0.1) !important;
     border-radius: 15px !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    flex-direction: column !important;
+  }
+
+  /* Slick 클론 카드 숨김 */
+  #testimonialSlider .testimonial-card.slick-cloned {
+    display: none !important;
   }
 
   /* Target specific about page elements that might cause overflow */
