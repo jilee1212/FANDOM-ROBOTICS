@@ -398,6 +398,33 @@ body {
     max-width: 350px !important;
     padding: 20px !important;
   }
+
+  /* Bootstrap 클래스 덮어쓰기 - 가장 강력한 방법 */
+  .about-shot-info .container .row .col-lg-6 {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    flex: 0 0 300px !important;
+  }
+
+  .about-shot-info .container .row .col-lg-6:first-child,
+  .about-shot-info .container .row .col-lg-6:last-child {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    flex: 0 0 300px !important;
+    margin: 0 auto 40px auto !important;
+  }
+
+  /* 최종 해결책 - 인라인 스타일 수준의 우선순위 */
+  section.about-shot-info .container .row .col-lg-6[class*="col"] {
+    width: 300px !important;
+    max-width: 300px !important;
+    min-width: 300px !important;
+    flex-basis: 300px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+  }
 }
 
 /* Mobile Touch Target Optimization */
