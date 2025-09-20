@@ -550,14 +550,150 @@ body {
     height: auto !important;
   }
 
-  /* 프로젝트 갤러리 이미지 모바일 표시 수정 */
+  /* 프로젝트 갤러리 모바일 버전 - 이미지 숨기고 버튼 표시 */
   .company-gallery img {
-    max-width: none !important;
-    width: auto !important;
-    height: auto !important;
+    display: none !important;
+  }
+
+  .company-gallery {
+    text-align: center !important;
+    padding: 40px 20px !important;
+  }
+
+  /* 갤러리 확인 버튼 */
+  .gallery-view-btn {
+    background: linear-gradient(45deg, #00A9FF, #0080CC) !important;
+    border: none !important;
+    color: white !important;
+    padding: 15px 30px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(0, 169, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
     display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  }
+
+  .gallery-view-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 169, 255, 0.4) !important;
+  }
+
+  /* 모바일 갤러리 모달 */
+  .mobile-gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    overflow-y: auto;
+  }
+
+  .mobile-gallery-modal.active {
+    display: block;
+  }
+
+  .modal-header {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .modal-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 10px;
+  }
+
+  .modal-gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .modal-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .modal-gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  /* 이미지 풀스크린 뷰 */
+  .fullscreen-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fullscreen-overlay.active {
+    display: flex;
+  }
+
+  .fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Target specific about page elements that might cause overflow */
