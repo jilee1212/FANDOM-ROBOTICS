@@ -439,6 +439,11 @@ body {
     opacity: 0 !important;
   }
 
+  /* PC 버전에서는 모바일 갤러리 버튼 컨테이너 숨김 */
+  .mobile-gallery-button-container {
+    display: none !important;
+  }
+
   /* PC 버전에서는 모바일 줄바꿈 숨김 */
   .mobile-break {
     display: none !important;
@@ -568,8 +573,15 @@ body {
     height: auto !important;
   }
 
+  /* 모바일 갤러리 버튼 컨테이너 */
+  .mobile-gallery-button-container {
+    text-align: center !important;
+    padding: 40px 20px !important;
+    display: block !important;
+  }
+
   /* 모바일에서만 갤러리 확인 버튼 표시 - 우선순위 강화 */
-  .company-gallery .gallery-view-btn {
+  .mobile-gallery-button-container .gallery-view-btn {
     background: linear-gradient(45deg, #00A9FF, #0080CC) !important;
     border: none !important;
     color: white !important;
@@ -586,7 +598,7 @@ body {
     opacity: 1 !important;
   }
 
-  .company-gallery .gallery-view-btn:hover {
+  .mobile-gallery-button-container .gallery-view-btn:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(0, 169, 255, 0.4) !important;
     color: white !important;
@@ -601,6 +613,25 @@ body {
   .company-gallery {
     text-align: center !important;
     padding: 40px 20px !important;
+  }
+
+  /* 모바일에서 Slick 슬라이더 비활성화 */
+  .company-gallery.slick-initialized {
+    display: block !important;
+  }
+
+  .company-gallery .slick-list,
+  .company-gallery .slick-track {
+    display: none !important;
+  }
+
+  .company-gallery .slick-dots {
+    display: none !important;
+  }
+
+  .company-gallery .slick-prev,
+  .company-gallery .slick-next {
+    display: none !important;
   }
 
   /* 모바일 전용 줄바꿈 표시 */
