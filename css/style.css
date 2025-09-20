@@ -433,8 +433,10 @@ body {
     display: inline-block !important;
   }
 
-  .gallery-view-btn {
+  .company-gallery .gallery-view-btn {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 
   /* PC 버전에서는 모바일 줄바꿈 숨김 */
@@ -566,8 +568,8 @@ body {
     height: auto !important;
   }
 
-  /* 모바일에서만 갤러리 확인 버튼 표시, PC는 이미지 표시 */
-  .gallery-view-btn {
+  /* 모바일에서만 갤러리 확인 버튼 표시 - 우선순위 강화 */
+  .company-gallery .gallery-view-btn {
     background: linear-gradient(45deg, #00A9FF, #0080CC) !important;
     border: none !important;
     color: white !important;
@@ -580,9 +582,11 @@ body {
     cursor: pointer !important;
     display: inline-block !important;
     text-decoration: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-  .gallery-view-btn:hover {
+  .company-gallery .gallery-view-btn:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(0, 169, 255, 0.4) !important;
     color: white !important;
