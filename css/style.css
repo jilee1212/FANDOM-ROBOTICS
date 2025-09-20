@@ -436,6 +436,11 @@ body {
   .gallery-view-btn {
     display: none !important;
   }
+
+  /* PC 버전에서는 모바일 줄바꿈 숨김 */
+  .mobile-break {
+    display: none !important;
+  }
 }
 
 /* Mobile Touch Target Optimization */
@@ -592,6 +597,11 @@ body {
   .company-gallery {
     text-align: center !important;
     padding: 40px 20px !important;
+  }
+
+  /* 모바일 전용 줄바꿈 표시 */
+  .mobile-break {
+    display: inline !important;
   }
 
   /* Target specific about page elements that might cause overflow */
