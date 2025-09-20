@@ -550,6 +550,16 @@ body {
     height: auto !important;
   }
 
+  /* 프로젝트 갤러리 이미지 모바일 표시 수정 */
+  .company-gallery img {
+    max-width: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
   /* Target specific about page elements that might cause overflow */
   .company-mission video {
     width: 100% !important;
@@ -1118,6 +1128,15 @@ a:focus, a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 15px !important;
     margin-top: 5px;
+  }
+
+  /* 모바일 메뉴 링크 텍스트 색상 */
+  .navigation .navbar-collapse .nav-link {
+    color: #000000 !important;
+  }
+
+  .navigation .navbar-collapse .nav-link:hover {
+    color: #00A9FF !important;
   }
 }
 .navigation .dropdown-submenu .dropdown-menu {
