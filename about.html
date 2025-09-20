@@ -201,9 +201,9 @@ Start Call To Action
 					<img loading="lazy" src="images/portfolio/DEX_4.png" alt="DEX 거래소 4">
 					<img loading="lazy" src="images/portfolio/klandwallet-4.jpg" alt="탈중앙화 지갑 4">
 					<!-- 모바일 갤러리 확인 버튼 -->
-					<button class="gallery-view-btn" onclick="openMobileGallery()">
+					<a href="portfolio.html" class="gallery-view-btn">
 						📱 프로젝트 갤러리 확인하기
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -378,105 +378,6 @@ Start Call To Action
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
 <script src="plugins/google-map/gmap.js"></script>
 
-<!-- 모바일 갤러리 모달 -->
-<div id="mobileGalleryModal" class="mobile-gallery-modal">
-	<div class="modal-header">
-		<h3 class="modal-title">프로젝트 갤러리</h3>
-		<button class="modal-close" onclick="closeMobileGallery()">&times;</button>
-	</div>
-	<div class="modal-gallery-grid">
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/DEX_1.png', 'DEX 거래소')">
-			<img loading="lazy" src="images/portfolio/DEX_1.png" alt="DEX 거래소">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/klandwallet-3.jpg', '탈중앙화 지갑')">
-			<img loading="lazy" src="images/portfolio/klandwallet-3.jpg" alt="탈중앙화 지갑">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/profit.png', '차익거래 봇')">
-			<img loading="lazy" src="images/portfolio/profit.png" alt="차익거래 봇">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/AI-signal.png', 'AI 시그널')">
-			<img loading="lazy" src="images/portfolio/AI-signal.png" alt="AI 시그널">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/cross-chain.png', '크로스체인')">
-			<img loading="lazy" src="images/portfolio/cross-chain.png" alt="크로스체인">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/DEX_2.png', 'DEX 거래소 2')">
-			<img loading="lazy" src="images/portfolio/DEX_2.png" alt="DEX 거래소 2">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/klandwallet-1.jpg', '탈중앙화 지갑 1')">
-			<img loading="lazy" src="images/portfolio/klandwallet-1.jpg" alt="탈중앙화 지갑 1">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/DEX_3.png', 'DEX 거래소 3')">
-			<img loading="lazy" src="images/portfolio/DEX_3.png" alt="DEX 거래소 3">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/klandwallet-2.jpg', '탈중앙화 지갑 2')">
-			<img loading="lazy" src="images/portfolio/klandwallet-2.jpg" alt="탈중앙화 지갑 2">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/past.png', '과거 프로젝트')">
-			<img loading="lazy" src="images/portfolio/past.png" alt="과거 프로젝트">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/DEX_4.png', 'DEX 거래소 4')">
-			<img loading="lazy" src="images/portfolio/DEX_4.png" alt="DEX 거래소 4">
-		</div>
-		<div class="modal-gallery-item" onclick="openFullscreen('images/portfolio/klandwallet-4.jpg', '탈중앙화 지갑 4')">
-			<img loading="lazy" src="images/portfolio/klandwallet-4.jpg" alt="탈중앙화 지갑 4">
-		</div>
-	</div>
-</div>
-
-<!-- 풀스크린 이미지 오버레이 -->
-<div id="fullscreenOverlay" class="fullscreen-overlay">
-	<button class="fullscreen-close" onclick="closeFullscreen()">&times;</button>
-	<img id="fullscreenImage" class="fullscreen-image" src="" alt="">
-</div>
-
-<script>
-// 모바일 갤러리 모달 열기
-function openMobileGallery() {
-	document.getElementById('mobileGalleryModal').classList.add('active');
-	document.body.style.overflow = 'hidden';
-}
-
-// 모바일 갤러리 모달 닫기
-function closeMobileGallery() {
-	document.getElementById('mobileGalleryModal').classList.remove('active');
-	document.body.style.overflow = 'auto';
-}
-
-// 풀스크린 이미지 열기
-function openFullscreen(imageSrc, imageAlt) {
-	const fullscreenImage = document.getElementById('fullscreenImage');
-	fullscreenImage.src = imageSrc;
-	fullscreenImage.alt = imageAlt;
-	document.getElementById('fullscreenOverlay').classList.add('active');
-}
-
-// 풀스크린 이미지 닫기
-function closeFullscreen() {
-	document.getElementById('fullscreenOverlay').classList.remove('active');
-}
-
-// ESC 키로 모달 닫기
-document.addEventListener('keydown', function(event) {
-	if (event.key === 'Escape') {
-		closeMobileGallery();
-		closeFullscreen();
-	}
-});
-
-// 모달 배경 클릭시 닫기
-document.getElementById('mobileGalleryModal').addEventListener('click', function(event) {
-	if (event.target === this) {
-		closeMobileGallery();
-	}
-});
-
-document.getElementById('fullscreenOverlay').addEventListener('click', function(event) {
-	if (event.target === this) {
-		closeFullscreen();
-	}
-});
-</script>
 
 <!-- Custom js -->
 <script src="js/script.js"></script>
