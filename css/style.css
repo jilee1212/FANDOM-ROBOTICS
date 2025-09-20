@@ -639,6 +639,46 @@ body {
     display: inline !important;
   }
 
+  /* 모바일 영상 슬라이더 전체 화면 설정 */
+  .hero-area.video-hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+  }
+
+  .hero-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transform: none !important;
+  }
+
+  .video-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: 1 !important;
+  }
+
+  .text-slider-container {
+    position: relative !important;
+    z-index: 2 !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
   /* Target specific about page elements that might cause overflow */
   .company-mission video {
     width: 100% !important;
