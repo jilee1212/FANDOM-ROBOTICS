@@ -306,6 +306,231 @@ body {
   }
 }
 
+/* Enhanced Mobile Breakpoints */
+@media (max-width: 428px) {
+  /* iPhone 12 Pro Max and similar large phones */
+  .hero-area h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 390px) {
+  /* iPhone 12 Pro and similar standard phones */
+  .hero-area h1 {
+    font-size: 24px !important;
+    line-height: 1.2;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Common Android phones */
+  .hero-area h1 {
+    font-size: 22px !important;
+  }
+
+  .hero-area p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .navbar-brand .logo-text {
+    font-size: 14px !important;
+  }
+}
+
+/* Mobile Touch Target Optimization */
+@media (max-width: 768px) {
+  /* Enhance button touch targets for mobile */
+  .btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .btn-main {
+    min-height: 48px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* Improve navigation touch targets */
+  .navbar-toggler {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    padding: 12px 16px !important;
+    font-size: 16px;
+  }
+
+  /* Better form input touch targets */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  /* Slider controls for better touch */
+  .slider-dot {
+    min-height: 44px;
+    min-width: 44px;
+    margin: 0 5px;
+  }
+
+  /* About page Mission/Vision cards - mobile layout - same size as reference card */
+  .company-mission .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .company-mission .col-md-6 {
+    width: 300px !important;
+    max-width: 300px !important;
+    margin-bottom: 40px;
+    flex: none;
+    /* Match the reference card structure */
+    padding: 30px 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .company-mission .col-md-6 h3 {
+    margin-bottom: 20px !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+  }
+
+  .company-mission .col-md-6 p {
+    margin-bottom: 20px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+
+  .company-mission .col-md-6 video,
+  .company-mission .col-md-6 img {
+    margin-top: 20px !important;
+    border-radius: 8px !important;
+  }
+
+  .company-mission .col-md-6:first-child {
+    order: 1;
+  }
+
+  .company-mission .col-md-6:last-child {
+    order: 2;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+
+  /* Fix about.html horizontal overflow issue - stronger approach */
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .container-fluid,
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure no elements extend beyond viewport */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix any wide images or videos - specific to about page */
+  img, video {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Target specific about page elements that might cause overflow */
+  .company-mission video {
+    width: 100% !important;
+    max-width: 100% !important;
+    clip-path: none !important;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .col-md-6,
+  .col-lg-6,
+  .col-xl-6 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Mobile navigation bar - reduce height */
+  .navigation {
+    min-height: 60px !important;
+    height: 60px !important;
+  }
+
+  .navigation .navbar {
+    padding: 8px 0 !important;
+  }
+
+  .navigation .container {
+    padding: 0 15px !important;
+  }
+
+  /* Mobile hamburger menu - white icon for better visibility */
+  .navigation .navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigation .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 20px;
+    height: 15px;
+  }
+
+  .navigation .navbar-toggler:focus,
+  .navigation .navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  /* Reduce logo size on mobile */
+  .navigation .navbar-brand .logo-img {
+    max-height: 35px !important;
+  }
+
+  .navigation .navbar-brand .logo-text {
+    font-size: 16px !important;
+  }
+}
+
 p {
   font-family: "Source Sans Pro", sans-serif;
   color: #FFFFFF;
