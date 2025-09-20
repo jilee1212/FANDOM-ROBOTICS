@@ -1102,6 +1102,22 @@ a:focus, a:hover {
   .navigation .navbar-collapse.show {
     overflow-y: auto;
     max-height: calc(100vh - 55px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px !important;
+    margin-top: 5px;
+  }
+
+  /* 모바일 네비게이션 메뉴 전체 배경 */
+  .navigation .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px !important;
+    margin-top: 5px;
   }
 }
 .navigation .dropdown-submenu .dropdown-menu {
